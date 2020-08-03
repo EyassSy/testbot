@@ -20,20 +20,24 @@ bot.catecories = fs.readdirSync("./commands/");
   require(`./handlers/${handler}`)(bot); 
 });
 
+///////////////////////////{ Status }////////////////////////////////
+
 bot.on('ready', () => {
   console.log(`Hello! ${bot.user.username} is now online!!`)
 
   setInterval(() => {
     const statuses = [
       `-Help`,
-      `Coded by عہمہكہ إيہأسہ`,
-      `Im Nox :D`,
+      `Coded by team wr3an`,
+      `Im testbot`,
     ]
 
     const status = statuses[Math.floor(Math.random() * statuses.length)]
     bot.user.setActivity(status, { type: 'STREAMING', url: 'https://twitch.tv/idk' })
     }, 5000)
 })
+
+////////////////////////////{ dm }///////////////////////////////////
 
 bot.on("message", async message => {
   if(message.author.bot) return;
@@ -49,6 +53,8 @@ bot.on("message", async message => {
       }
   }
 })
+
+//////////////////////////{ Botinvite }///////////////////////////
  
 bot.on("guildMemberAdd", member =>{
   member.roles.add(member.guild.roles.cache.find(role => role.name == "Nox"), "auto added.");
@@ -64,14 +70,14 @@ if (message.content === '-botinvite') {
   });
  
  
-bot.on('message', luxy => {
-if(luxy.author.bot) return;
-if(luxy.content === '-botinvite') {
-luxy.channel.send('**Check your dms** 📥');
+bot.on('message', testbot => {
+if(testbot.author.bot) return;
+if(testbot.content === '-botinvite') {
+testbot.channel.send('**Check your dms** 📥');
 }
 });
 
-//////////////////////////////////////////////////////////////////
+////////////////////////////{ Help }////////////////////////////////
 
 bot.on("message", message => {
   if (message.author.bot) return;
@@ -177,7 +183,7 @@ ${prefix}np : shows the current playing song name
   }
 });
 
-+//////////////////////////////////////////////////////////////////
+/////////////////////////{ Music commands }///////////////////////////
 
 bot.on('message', async message => {
   if(message.author.bot) return

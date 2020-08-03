@@ -54,6 +54,14 @@ bot.on("message", async message => {
   }
 })
 
+//////////////////////////////////////////////////////////////////
+
+bot.on("message", msg => {
+  if (msg.content.startsWith(prefix + "support")) {
+    msg.channel.send("soon: الرابط الخاص لسيرفر الدعم الفني");
+  }
+});
+
 //////////////////////////{ Botinvite }///////////////////////////
  
 bot.on("guildMemberAdd", member =>{
